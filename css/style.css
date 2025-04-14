@@ -530,47 +530,7 @@ header nav a.active {
 
 
 /* --- Responsive Adjustments for Service Showcase --- */
-@media (max-width: 768px) {
-    .service-block.image-with-text__grid,
-    .service-block--reverse.image-with-text__grid {
-        flex-direction: column; /* Stack vertically */
-        gap: var(--spacing-md); /* Reduce gap */
-        margin-bottom: var(--spacing-lg);
-    }
-     .image-with-text__media-item,
-    .image-with-text__text-item {
-        flex-basis: 100%; /* Take full width */
-        min-width: auto;
-    }
-     .image-with-text__media.media--adapt {
-         padding-bottom: 75%; /* Adjust aspect ratio for mobile if needed */
-     }
-    .image-with-text__content {
-         text-align: center; /* Center text on mobile */
-    }
-     /* Center elements within the text block */
-     .image-with-text__content .service-title,
-     .image-with-text__content .service-duration-price,
-     .image-with-text__content .service-description,
-     .image-with-text__content .service-original {
-          text-align: center;
-     }
-     .image-with-text__content .service-description p {
-          text-align: center; /* Ensure paragraphs inside are centered too */
-     }
-     .image-with-text__content .service-duration-price {
-         margin-left: auto;
-         margin-right: auto;
-     }
-
-    .service-book-btn {
-        display: block; /* Make button full width (or centered block) */
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 300px;
-    }
-
-}
+/* Moved to main @media (max-width: 768px) block below */
 
 /* --- END Services Showcase CSS --- */
 
@@ -621,7 +581,11 @@ footer a:hover { color: var(--accent-blue); }
 
     /* Adjust split hero for tablet */
     .hero.hero-split { min-height: 65vh; }
-    .hero.hero-split .container { width: 55%; padding-right: var(--spacing-md); }
+    .hero.hero-split .container {
+        width: 55%; /* More space for text */
+        padding-right: var(--spacing-md);
+        padding-left: 3vw; /* Adjusted smaller screen padding */
+    }
     .hero.hero-split .hero-bg { width: 45%; }
 }
 
@@ -654,19 +618,81 @@ footer a:hover { color: var(--accent-blue); }
         flex-direction: column; /* Stack elements */
     }
     .hero.hero-split .container {
-        width: 100%; max-width: 100%; padding-left: 15px; padding-right: 15px;
+        width: 100%;
+        max-width: 100%;
+        padding-left: 15px; /* Revert to standard padding when stacked */
+        padding-right: 15px;
         margin: 0 auto; order: 2; /* Text below image */
     }
     .hero.hero-split .hero-content { max-width: 90%; margin: 0 auto; }
     .hero.hero-split p { margin-left: auto; margin-right: auto; }
     .hero.hero-split .hero-bg {
-        position: relative; width: 100%; height: 300px; /* Fixed height */
+        position: relative;
+        width: 100%;
+        height: 35vh; /* Use viewport height for better adaptability */
+        min-height: 280px; /* Minimum height */
         order: 1; /* Image above text */ right: auto; left: auto; top: auto;
         margin-bottom: var(--spacing-lg); /* Space between stacked image and text */
     }
 
+
+    /* --- Adjust Service Showcase for Mobile --- */
+    .service-block.image-with-text__grid,
+    .service-block--reverse.image-with-text__grid {
+        flex-direction: column; /* Stack vertically */
+        gap: var(--spacing-md); /* Reduce gap */
+        margin-bottom: var(--spacing-lg);
+    }
+     .image-with-text__media-item,
+    .image-with-text__text-item {
+        flex-basis: 100%; /* Take full width */
+        min-width: auto;
+        width: 100%; /* Explicitly set width */
+    }
+     .image-with-text__media.media--adapt {
+         padding-bottom: 80%; /* Adjust aspect ratio for mobile - try ~4:3 or similar */
+         height: 0; /* Keep for padding-bottom technique */
+     }
+     /* Ensure image is visible within its container */
+     .image-with-text__media img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .image-with-text__content {
+         text-align: center; /* Center text on mobile */
+         padding: var(--spacing-sm) 0; /* Reset padding */
+    }
+     /* Center elements within the text block */
+     .image-with-text__content .service-title,
+     .image-with-text__content .service-duration-price,
+     .image-with-text__content .service-description,
+     .image-with-text__content .service-original {
+          text-align: center;
+     }
+     .image-with-text__content .service-description p {
+          text-align: center; /* Ensure paragraphs inside are centered too */
+     }
+     .image-with-text__content .service-duration-price {
+         margin-left: auto;
+         margin-right: auto;
+         /* text-align: center; */ /* Already covered by parent */
+     }
+
+    .service-book-btn {
+        display: block; /* Make button centered block */
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 300px;
+    }
+    /* --- End Service Showcase Mobile Adjustments --- */
+
+
     /* Adjust services list layout for mobile */
-    /* Note: The showcase responsive styles are handled in their own block above */
     .services-list { width: 100%; }
     .service-item .service-header { flex-direction: column; align-items: flex-start; } /* Target only service-item */
     .service-item .service-duration-price { text-align: left; margin-top: var(--spacing-xs); } /* Target only service-item */
@@ -680,4 +706,12 @@ footer a:hover { color: var(--accent-blue); }
     .benefits-grid { grid-template-columns: 1fr; }
     .collections-grid { grid-template-columns: 1fr; }
     .btn { padding: 0.7rem 1.5rem; font-size: 0.85rem; }
+
+    .image-with-text__media.media--adapt {
+        padding-bottom: 100%; /* Back to square on very small screens if desired */
+    }
+    .hero.hero-split .hero-bg {
+        height: 30vh;
+        min-height: 250px;
+    }
 }
