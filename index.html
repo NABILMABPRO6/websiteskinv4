@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SK'IN Morocco - La Science de la Peau Pure</title>
+    <meta name="description" content="SK'IN Morocco - Centre spécialisé en soins de visage haut de gamme à Casablanca, alliant science et précision.">
+    <!-- Original Index Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome (CSS Version) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- REMOVED Link to Harmonized Stylesheet -->
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+
+    <!-- START: Original Inline Styles for Index Page -->
+    <style>
+        /* Styles copied and adapted from bubbles.html and original index.html */
+        :root {
+            --bg-color: #FFFFFF;
+            --bg-light: #F9F9F9; /* Light background for alternate sections */
+            --text-color-primary: #333333;
+            --text-color-secondary: #757575;
+            --bubble-bg: #FFFFFF;
+            --bubble-border: #E0E0E0;
+            --bubble-shadow: rgba(0, 0, 0, 0.04);
+            --accent-blue: #8BCAD8;
+            --bubble-hover-border: var(--accent-blue);
+            --bubble-hover-shadow: rgba(139, 202, 216, 0.15);
+            --accent-dark: #444; /* Darker accent for buttons/links */
+            --font-primary: 'Inter', sans-serif;
+            /* UPDATED: Use a light beige for avatar backgrounds */
+            --avatar-bg: #F5F3EF;
+             /* Harmonized star color */
+             --star-color: var(--text-color-primary);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color-primary);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 90%; /* Use percentage for better responsiveness */
+            margin: 0 auto;
+            padding: 0 15px; /* Consistent horizontal padding */
+        }
+
+        /* Utility: Text Center */
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed; /* Make header sticky */
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            padding: 1rem 0;
+            backdrop-filter: blur(5px);
+             transition: padding 0.3s ease; /* Add transition for scroll effect */
+        }
+         /* Style for scrolled header (from main.js) */
+        header.scrolled {
+             padding: calc(1rem * 0.8) 0; /* Slightly reduce padding on scroll */
+             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px; /* Slightly wider for header content */
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: var(--text-color-primary);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+        }
+
+        .logo span {
+            font-weight: 500;
+            color: var(--accent-blue);
+        }
+
+        header nav ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 1.8rem; /* Space between nav items */
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: var(--text-color-secondary);
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        header nav a:hover,
+        header nav a.active {
+            color: var(--accent-blue);
+        }
+
+        .mobile-menu-btn {
+            display: none; /* Hide by default */
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-color-primary);
+            cursor: pointer;
+        }
+
+        /* Buttons */
+         .btn {
+            display: inline-block;
+            background-color: var(--accent-blue);
+            color: var(--bg-color);
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px; /* Pill shape */
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--accent-blue);
+            cursor: pointer;
+            text-align: center;
+             letter-spacing: 0.03em;
+        }
+
+        .btn:hover {
+            background-color: #7ab8c7; /* Slightly darker blue */
+            transform: translateY(-2px);
+             box-shadow: 0 4px 10px rgba(139, 202, 216, 0.3);
+        }
+
+        .btn-dark {
+            background-color: var(--text-color-primary);
+            border-color: var(--text-color-primary);
+            color: var(--bg-color);
+        }
+        .btn-dark:hover {
+             background-color: var(--text-color-secondary);
+             border-color: var(--text-color-secondary);
+             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+         /* Outline button for collection cards (Needed if used anywhere on index) */
+         .btn-outline {
+             background-color: transparent;
+             border: 1px solid var(--accent-blue);
+             color: var(--accent-blue);
+             padding: 0.6rem 1.5rem; /* Slightly smaller padding */
+         }
+         .btn-outline:hover {
+             background-color: var(--accent-blue);
+             color: var(--bg-color);
+             box-shadow: none; /* Remove shadow for outline hover */
+         }
+
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh; /* Use min-height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--bg-color);
+            padding-top: 100px; /* Increased padding for header */
+            padding-bottom: 40px; /* Add some bottom padding */
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/hero-bg.jpg') no-repeat center center/cover;
+            z-index: -2;
+        }
+         .hero-bg::after { /* Overlay */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.35); /* Consistent overlay */
+            z-index: -1;
+         }
+
+        .hero-content {
+            max-width: 700px;
+             z-index: 1;
+        }
+
+        .hero .subtitle {
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 200;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+             color: var(--bg-color); /* Ensure white text */
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* General Section Styling */
+        .section {
+            padding: 6rem 0; /* Consistent vertical padding */
+        }
+
+        .section-light {
+            background-color: var(--bg-light);
+        }
+         .section-accent {
+            background-color: var(--accent-blue);
+            color: var(--bg-color);
+            padding: 4rem 0;
+         }
+         .section-accent h2 { color: var(--bg-color); margin-bottom: 1rem; }
+         .section-accent p { color: rgba(255, 255, 255, 0.9); margin-bottom: 2rem; }
+
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header .subtitle { /* Reuse subtitle class style */
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--accent-blue);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p { /* Paragraph directly under section header */
+            font-size: 1.1rem;
+            color: var(--text-color-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* Introduction Section */
+        .intro-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.05rem;
+            color: var(--text-color-secondary);
+        }
+         .intro-content p {
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+         }
+         .intro-content p:last-child { margin-bottom: 0; }
+
+        /* Collections Section (Using Bubbles) */
+        .concerns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px 45px; /* Row gap, Column gap */
+            margin-top: 30px;
+        }
+
+        .concern-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 180px;
+            gap: 12px; /* Increased gap */
+            text-decoration: none; /* Make the whole item clickable */
+            color: inherit; /* Inherit text color */
+            transition: opacity 0.3s ease;
+        }
+        .concern-item:hover {
+            opacity: 0.9; /* Slight feedback on hover */
+        }
+
+        .concern-bubble {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1; /* ADDED: Ensure bubble is always square */
+            background-color: var(--bubble-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: 1.5px solid var(--bubble-border);
+            box-shadow: 0 5px 15px var(--bubble-shadow);
+            overflow: hidden;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                        box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                        border-color 0.35s ease-out;
+        }
+
+        .concern-item:hover .concern-bubble { /* Hover effect on item hover */
+            transform: scale(1.04);
+            border-color: var(--bubble-hover-border);
+            box-shadow: 0 8px 25px var(--bubble-hover-shadow);
+        }
+
+        .concern-text {
+            font-size: 1rem;
+            font-weight: 500; /* Bolder text */
+            text-align: center;
+            line-height: 1.4;
+            z-index: 2;
+            padding: 0 15px;
+            color: var(--text-color-primary);
+            transition: color 0.3s ease-out;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .concern-description {
+            font-size: 0.9rem; /* Slightly larger */
+            color: var(--text-color-primary); /* Darker color */
+            font-weight: 500; /* Make it bolder */
+            line-height: 1.4;
+            text-align: center;
+            max-width: 100%;
+             letter-spacing: 0.02em; /* Subtle spacing */
+             /* Removed margin-top: 8px; -> Use gap on parent */
+        }
+
+        .bubble-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+
+        .mini-bubble {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0;
+            transform: scale(0);
+        }
+
+
+        /* Science Section */
+        .science-section {
+             padding: 6rem 0;
+        }
+        .science-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .science-content .subtitle { /* Reuse subtitle styling */ }
+        .science-content h2 { /* Reuse h2 styling */ margin-bottom: 1.5rem; }
+        .science-content > p { /* Target direct paragraph child */
+             font-size: 1.05rem;
+             color: var(--text-color-secondary);
+             margin-bottom: 2.5rem;
+             font-weight: 300;
+        }
+
+        .science-list {
+             display: grid;
+             gap: 1.8rem;
+        }
+
+        .science-item h4 {
+             font-size: 1.1rem;
+             font-weight: 500;
+             color: var(--text-color-primary);
+             margin-bottom: 0.5rem;
+             letter-spacing: 0.03em;
+        }
+        .science-item p {
+            font-size: 0.95rem;
+            color: var(--text-color-secondary);
+            font-weight: 300;
+        }
+
+        .science-image {
+            min-height: 450px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 6px; /* Consistent border radius */
+        }
+
+        /* Reviews Section - UPDATED */
+        .reviews-section {
+            padding: 6rem 0;
+            background-color: var(--bg-light);
+        }
+        /* Use specific classes for review title/subtitle for potential overrides */
+        .section-header .reviews-title { /* Target h2 with specific class */
+            font-size: 2.5rem; /* Same as default h2 */
+            font-weight: 300;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-color-primary);
+            margin-bottom: 0.5rem; /* Less margin before subtitle */
+        }
+        .section-header .reviews-subtitle { /* Target p with specific class */
+            font-size: 1.1rem;
+            color: var(--text-color-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .reviews-microcopy {
+             font-size: 0.95rem;
+             color: var(--text-color-secondary);
+             margin-top: -2.5rem; /* Pull up closer to header */
+             margin-bottom: 2.5rem; /* Space before overall rating or grid */
+             max-width: 600px;
+             margin-left: auto;
+             margin-right: auto;
+             line-height: 1.5;
+        }
+         .reviews-microcopy strong {
+             color: var(--text-color-primary);
+             font-weight: 500;
+         }
+
+        .overall-rating {
+            text-align: center;
+            margin-bottom: 3rem; /* Consistent bottom margin */
+            font-size: 1.1rem;
+            font-weight: 500;
+            /* Removed margin-top to let microcopy control spacing */
+        }
+        .overall-rating .stars {
+            color: var(--star-color); /* Uses variable defined at top */
+            margin-right: 0.5rem;
+            font-size: 1.2rem; /* Slightly larger stars */
+            vertical-align: middle;
+        }
+        .overall-rating .rating-value {
+            color: var(--text-color-primary);
+            font-weight: 600;
+             vertical-align: middle;
+        }
+        .overall-rating .review-count {
+            color: var(--text-color-secondary);
+            font-weight: 400;
+            font-size: 1rem; /* Slightly smaller */
+             vertical-align: middle;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem; /* Gap between review cards */
+            margin-bottom: 4rem; /* Space before CTA button */
+        }
+
+        .review-card {
+            background-color: var(--bg-color);
+            border: 1px solid var(--bubble-border);
+            border-radius: 6px; /* Consistent radius */
+            padding: 1.8rem;
+            box-shadow: 0 4px 10px var(--bubble-shadow);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Updated transition */
+            display: flex; /* ADDED: Flex column layout */
+            flex-direction: column; /* ADDED: Stack items vertically */
+        }
+        @media (hover: hover) { /* Apply hover only on devices that support hover */
+             .review-card:hover {
+                  border-color: var(--accent-blue);
+                  box-shadow: 0 6px 15px rgba(139, 202, 216, 0.1); /* Subtle blue shadow */
+             }
+        }
+
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .review-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: var(--avatar-bg); /* Light Beige */
+            color: var(--text-color-primary); /* Keep text dark for contrast */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500; /* Slightly less bold */
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+
+        .review-info {
+             flex-grow: 1; /* Allow info to take remaining space */
+        }
+        /* Updated class names */
+        .review-info .review-name { /* Specific class */
+            font-size: 1rem;
+            font-weight: 500; /* Slightly less bold */
+            color: var(--text-color-primary);
+            margin-bottom: 0.1rem;
+        }
+        .review-info .review-date { /* Specific class */
+            font-size: 0.85rem;
+            color: var(--text-color-secondary);
+        }
+
+        .review-rating {
+            margin-bottom: 1rem;
+            color: var(--star-color); /* Uses variable */
+            font-size: 0.9rem;
+        }
+
+        .review-text {
+            font-size: 0.95rem;
+            color: var(--text-color-secondary);
+            line-height: 1.7; /* Slightly increased line height */
+            font-weight: 400;
+            flex-grow: 1; /* ADDED: Allow text to fill remaining space */
+            margin-bottom: 0; /* Ensure no extra bottom margin */
+        }
+
+        /* Style for the new CTA button area */
+        .reviews-cta {
+             text-align: center;
+             /* Margin bottom handled by grid gap, top by grid margin */
+        }
+         .reviews-cta .btn {
+             /* Use existing btn styles, maybe slight adjustments if needed */
+             /* Example: padding: 0.9rem 2rem; */
+         }
+
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--bg-light); /* Light footer for this design */
+            color: var(--text-color-secondary);
+            padding: 4rem 0 2rem 0;
+            font-size: 0.9rem;
+             border-top: 1px solid var(--bubble-border); /* Added top border */
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo { /* Use existing logo class */ }
+        .footer-about p { line-height: 1.7; font-weight: 300; }
+        footer h4 {
+            font-size: 1.1rem; font-weight: 500; color: var(--text-color-primary);
+            margin-bottom: 1rem; letter-spacing: 0.03em;
+        }
+        footer ul { list-style: none; padding: 0; }
+        footer ul li { margin-bottom: 0.6rem; }
+        footer a { text-decoration: none; color: var(--text-color-secondary); transition: color 0.3s ease; } /* Added default link styles */
+        footer a:hover { color: var(--accent-blue); }
+        .footer-bottom {
+            text-align: center; padding-top: 2rem;
+            border-top: 1px solid var(--bubble-border);
+            font-size: 0.85rem; font-weight: 300;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+             html { font-size: 15px; }
+             .hero h1 { font-size: 3rem; }
+             .section, .reviews-section { padding: 5rem 0; }
+             .section-header h2, .section-header .reviews-title { font-size: 2.2rem; } /* Adjust review title too */
+             .concern-item { width: 165px; }
+             .concerns { gap: 40px 35px; }
+             .science-grid { grid-template-columns: 1fr; }
+             .science-image { order: -1; min-height: 350px; }
+        }
+
+        @media (max-width: 768px) {
+            .header-container { padding: 0 15px; }
+             /* Mobile Nav needs rules for when .active is added by JS */
+            header nav ul {
+                 display: none; /* Hide desktop nav */
+                 position: absolute; top: 100%; left: 0; width: 100%;
+                 background-color: var(--bg-color); flex-direction: column;
+                 padding: 1rem 0; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+                 gap: 0; border-top: 1px solid var(--bubble-border);
+            }
+            header nav ul.active { display: flex; } /* Show when active */
+            header nav ul li { width: 100%; text-align: center; }
+            header nav ul li a { display: block; padding: 1rem 0; width: 100%; }
+            header nav .btn { display: block; margin: 1rem auto; width: 80%; }
+            .mobile-menu-btn { display: block; } /* Show hamburger */
+
+            .hero h1 { font-size: 2.5rem; letter-spacing: 0.08em; }
+            .hero p { font-size: 1rem; }
+            .section, .reviews-section { padding: 4rem 0; }
+            .section-header h2, .section-header .reviews-title { font-size: 2rem; } /* Adjust review title too */
+            .concern-item { width: 145px; }
+            .concerns { gap: 35px 30px; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center;}
+            .footer-about p { max-width: 400px; margin: 0 auto; }
+             .reviews-grid { grid-template-columns: 1fr; /* Stack reviews */ }
+             .reviews-microcopy { margin-top: -2rem; margin-bottom: 2rem; } /* Adjust spacing */
+        }
+
+        @media (max-width: 480px) {
+             html { font-size: 14px; }
+             .hero h1 { font-size: 2rem; }
+             .section-header h2, .section-header .reviews-title { font-size: 1.8rem; } /* Adjust review title too */
+             .concern-item { width: calc(50% - 15px); /* Two bubbles per row */ }
+             .concerns { gap: 30px; } /* Equal gap */
+             .review-card { padding: 1.5rem; }
+             .reviews-grid { grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 3rem;} /* Adjust grid gap and bottom margin */
+             .reviews-microcopy { font-size: 0.9rem; }
+        }
+    </style>
+    <!-- END: Original Inline Styles for Index Page -->
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">SK'<span>IN</span></a>
+            <nav>
+                <!-- Added IDs for JS targeting -->
+                <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul id="main-nav">
+                    <li><a href="#collections">Collections</a></li>
+                    <li><a href="#science">Notre Science</a></li>
+                    <li><a href="#reviews">Avis</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="https://www.fresha.com/a/skin-casablanca-13-rue-ain-el-ati-qdju14xa/booking" class="btn" target="_blank">Réserver</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <p class="subtitle">Bienvenue chez SK'IN</p>
+                <h1>La Science de la Peau Pure</h1>
+                <p>Premier centre spécialisé en soins de visage à Casablanca, alliant science de pointe et précision pour révéler la version la plus radieuse de vous-même.</p>
+                <a href="#collections" class="btn">Découvrir nos collections</a>
+            </div>
+        </div>
+        <!-- Corrected Image Path -->
+        <div class="hero-bg" style="background-image: url('images/hero-bg.jpg');"></div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header text-center">
+                <p class="subtitle">Notre Vision</p>
+                <h2>Une Approche Transformative</h2>
+                 <!-- Text directly in intro-content -->
+            </div>
+            <div class="intro-content">
+                <p>Chez SK'IN, nous avons repensé l'approche des soins du visage pour créer une expérience transformative alliant science de pointe et luxe sensoriel. Nos collections de soins sont conçues pour répondre à des besoins spécifiques tout en offrant une expérience holistique.</p>
+                <p>Situé dans le quartier BOURGOGNE de Casablanca, notre centre combine l'expertise de nos Thérapeutes SK'IN avec les formules innovantes des marques les plus prestigieuses : 111Skin, Augustinus Bader et ENVIRON.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Section (Bubbles) -->
+    <section id="collections" class="section section-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <p class="subtitle">Nos Collections</p>
+                <h2>Soins Conçus pour Transformer</h2>
+                <p>Explorez nos collections, chacune ciblant des besoins spécifiques avec une approche scientifique et luxueuse.</p>
+            </div>
+            <div class="concerns">
+                 <!-- Révélation -->
+                 <a href="revelation.html" class="concern-item">
+                     <div class="concern-bubble" id="revelation">
+                         <div class="concern-text">Révélation</div>
+                         <div class="bubble-animation"></div>
+                     </div>
+                     <p class="concern-description">Découvrir et comprendre votre peau.</p>
+                 </a>
+                 <!-- Régénération -->
+                 <a href="regeneration.html" class="concern-item">
+                     <div class="concern-bubble" id="regeneration">
+                         <div class="concern-text">Régénération</div>
+                         <div class="bubble-animation"></div>
+                     </div>
+                     <p class="concern-description">Stimuler le renouvellement cellulaire.</p>
+                 </a>
+                 <!-- Éclat -->
+                 <a href="eclat.html" class="concern-item">
+                     <div class="concern-bubble" id="eclat">
+                         <div class="concern-text">Éclat</div>
+                         <div class="bubble-animation"></div>
+                     </div>
+                     <p class="concern-description">Illuminer et unifier le teint.</p>
+                 </a>
+                 <!-- Lift Signature -->
+                 <a href="liftsignature.html" class="concern-item">
+                     <div class="concern-bubble" id="Lift Signature">
+                         <div class="concern-text">Lift Signature</div>
+                         <div class="bubble-animation"></div>
+                     </div>
+                     <p class="concern-description">Redéfinir les contours et raffermir.</p>
+                 </a>
+                 <!-- Fondamentale -->
+                 <a href="fondamentale.html" class="concern-item">
+                     <div class="concern-bubble" id="fondamentale">
+                         <div class="concern-text">Fondamentale</div>
+                         <div class="bubble-animation"></div>
+                     </div>
+                     <p class="concern-description">Nourrir et équilibrer la peau.</p>
+                 </a>
+                 <!-- Ciblée -->
+                 <a href="ciblee.html" class="concern-item">
+                     <div class="concern-bubble" id="ciblee">
+                         <div class="concern-text">Ciblée</div>
+                         <div class="bubble-animation"></div>
+                     </div>
+                     <p class="concern-description">Traiter des préoccupations spécifiques.</p>
+                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Science Section -->
+    <section id="science" class="science-section">
+        <div class="container">
+            <div class="science-grid">
+                <div class="science-content">
+                    <p class="subtitle">Notre Expertise</p>
+                    <h2>La Science SK'IN</h2>
+                    <p>Au cœur de chaque traitement se trouve notre engagement envers l'excellence scientifique. Nos protocoles combinent expertise thérapeutique et formules innovantes pour des résultats visibles et durables.</p>
+                    <div class="science-list">
+                        <div class="science-item">
+                            <h4>Expertise Thérapeutique</h4>
+                            <p>Nos Thérapeutes SK'IN personnalisent chaque traitement selon vos besoins uniques.</p>
+                        </div>
+                        <div class="science-item">
+                            <h4>Partenariats d'Excellence</h4>
+                            <p>Nous collaborons avec 111Skin, Augustinus Bader, et ENVIRON pour vous offrir le meilleur de la recherche dermatologique.</p>
+                        </div>
+                        <div class="science-item">
+                            <h4>Approche Holistique</h4>
+                            <p>Nous traitons les symptômes visibles et leurs causes profondes pour des résultats durables.</p>
+                        </div>
+                        <div class="science-item">
+                            <h4>Expérience Sensorielle</h4>
+                            <p>Nos rituels de soins transforment chaque traitement en une expérience luxueuse.</p>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Image Path & Use CSS class -->
+                <div class="science-image" style="background-image: url('images/science-skin.jpg');"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section - UPDATED HTML STRUCTURE -->
+    <section id="reviews" class="reviews-section">
+        <div class="container">
+            <!-- UPDATED: Section Header with new title and subtitle -->
+            <div class="section-header text-center">
+                <h2 class="reviews-title">What Our Clients Say</h2> <!-- Specific class for potential style tweaks -->
+                <p class="reviews-subtitle">Real experiences. Real results.</p> <!-- Specific class -->
+            </div>
+
+            <!-- ADDED: Microcopy -->
+            <p class="reviews-microcopy text-center">
+                All reviews are verified via our Fresha profile. We are honored to be rated <strong>5.0 out of 5</strong> by our amazing clients.
+            </p>
+
+            <!-- Existing Overall Rating (Optional: You can keep or remove this based on preference) -->
+            <div class="overall-rating">
+                <span class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </span>
+                <span class="rating-value">5.0</span>
+                <span class="review-count">(30)</span>
+            </div>
+
+            <!-- UPDATED: Reviews Grid uses refined card structure -->
+            <div class="reviews-grid">
+                <!-- Review Card 1 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">Z</div>
+                        <div class="review-info">
+                            <h4 class="review-name">Zora N</h4> <!-- More specific class -->
+                            <span class="review-date">Sun, Apr 6, 2025</span> <!-- More specific class -->
+                        </div>
+                    </div>
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">
+                        Booked the appointment 15min and they were expect-ing me. Very well done skin assessment.. I booked a face/neck treatment. Was great...
+                    </p>
+                </div>
+
+                <!-- Review Card 2 -->
+                 <div class="review-card">
+                     <div class="review-header">
+                         <div class="review-avatar">A</div>
+                         <div class="review-info">
+                             <h4 class="review-name">Assia B</h4>
+                             <span class="review-date">Sat, Mar 29, 2025</span>
+                         </div>
+                     </div>
+                     <div class="review-rating">
+                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                     </div>
+                     <p class="review-text">
+                         Excellente prestation avec Fatiha qui a des doigts de fée et beaucoup de douceur ! Je recommanderai dès à présent cette adresse à mes contacts.
+                     </p>
+                 </div>
+
+                 <!-- Review Card 3 -->
+                 <div class="review-card">
+                     <div class="review-header">
+                         <div class="review-avatar">Z</div>
+                         <div class="review-info">
+                             <h4 class="review-name">Zineb T</h4>
+                             <span class="review-date">Fri, Mar 28, 2025</span>
+                         </div>
+                     </div>
+                     <div class="review-rating">
+                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                     </div>
+                     <p class="review-text">
+                         Fatiha est d'une douceur et d'un professionnalisme ex-tra ordinaire Merci pour ce moment de détente
+                     </p>
+                 </div>
+
+                 <!-- Review Card 4 -->
+                 <div class="review-card">
+                     <div class="review-header">
+                         <div class="review-avatar">D</div>
+                         <div class="review-info">
+                             <h4 class="review-name">Delphine G</h4>
+                             <span class="review-date">Tue, Mar 11, 2025</span>
+                         </div>
+                     </div>
+                     <div class="review-rating">
+                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                     </div>
+                     <p class="review-text">
+                         Cadre agréable et confortable. Expérience relaxante
+                     </p>
+                 </div>
+
+                 <!-- Review Card 5 -->
+                  <div class="review-card">
+                     <div class="review-header">
+                         <div class="review-avatar">S</div>
+                         <div class="review-info">
+                             <h4 class="review-name">Selma Z</h4>
+                             <span class="review-date">Wed, Feb 26, 2025</span>
+                         </div>
+                     </div>
+                     <div class="review-rating">
+                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                     </div>
+                     <p class="review-text">
+                         Le lieu est magnifique et relaxant, le soin était impec-cable et toute l'équipe était super agréable merci et à bientôt
+                     </p>
+                 </div>
+
+                 <!-- Review Card 6 -->
+                  <div class="review-card">
+                     <div class="review-header">
+                         <div class="review-avatar">D</div>
+                         <div class="review-info">
+                             <h4 class="review-name">Dounia A</h4>
+                             <span class="review-date">Sat, Jan 18, 2025</span>
+                         </div>
+                     </div>
+                     <div class="review-rating">
+                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                     </div>
+                     <p class="review-text">
+                         Beautiful and soothing experience
+                     </p>
+                 </div>
+                 <!-- End Review Cards -->
+            </div>
+
+            <!-- ADDED: CTA Button -->
+            <div class="reviews-cta text-center">
+                <a href="https://www.fresha.com/a/skin-casablanca-13-rue-ain-el-ati-qdju14xa/reviews" target="_blank" class="btn"> <!-- Using existing .btn style -->
+                    View All Reviews on Fresha
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- END OF UPDATED REVIEWS SECTION -->
+
+    <!-- Call to Action -->
+    <section class="section-accent">
+        <div class="container text-center">
+            <h2>Découvrez Votre Peau Transformée</h2>
+            <p>Réservez votre consultation personnalisée et commencez votre parcours vers une peau radieuse.</p>
+            <a href="https://www.fresha.com/a/skin-casablanca-13-rue-ain-el-ati-qdju14xa/booking" class="btn btn-dark" target="_blank">Réserver Maintenant</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo logo">SK'<span>IN</span></div> <!-- Re-applied logo class for consistency -->
+                    <p>Premier centre spécialisé en soins de visage à Casablanca, alliant science de pointe et précision pour révéler la version la plus radieuse de vous-même.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>13 Rue Aïn El Ati, BOURGOGNE</p>
+                    <p>Casablanca, Maroc</p>
+                    <p>Téléphone: +212 6 XX XX XX XX</p> <!-- Placeholder -->
+                    <p>Email: contact@skin-morocco.com</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Liens Rapides</h4>
+                    <ul>
+                        <li><a href="#collections">Collections</a></li>
+                        <li><a href="#science">Notre Science</a></li>
+                        <li><a href="#reviews">Avis</a></li>
+                        <li><a href="https://www.fresha.com/a/skin-casablanca-13-rue-ain-el-ati-qdju14xa/booking" target="_blank">Réserver</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Suivez-nous</h4>
+                    <ul>
+                        <li><a href="https://www.instagram.com/skin.morocco/" target="_blank">Instagram</a></li>
+                        <!-- <li><a href="#" target="_blank">Facebook</a></li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© <script>document.write(new Date().getFullYear());</script> SK'IN Morocco. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Link to Harmonized JS (Still needed for mobile menu, etc.) -->
+    <script src="js/main.js"></script>
+
+    <!-- Bubble Animation Script (INDEX PAGE ONLY - Kept as it's specific) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const concernItems = document.querySelectorAll('.concern-item');
+            const accentBlue = getComputedStyle(document.documentElement).getPropertyValue('--accent-blue').trim();
+
+            function createMiniBubbles(bubbleElement) {
+                const bubbleAnimationContainer = bubbleElement.querySelector('.bubble-animation');
+                if (!bubbleAnimationContainer) return;
+                 while (bubbleAnimationContainer.firstChild) { bubbleAnimationContainer.removeChild(bubbleAnimationContainer.firstChild); }
+                const bubbleCount = Math.floor(Math.random() * 5) + 6;
+                for (let i = 0; i < bubbleCount; i++) {
+                    const bubble = document.createElement('div'); bubble.classList.add('mini-bubble');
+                    const size = Math.floor(Math.random() * 7) + 3; bubble.style.width = `${size}px`; bubble.style.height = `${size}px`;
+                    if (Math.random() > 0.4) { bubble.style.backgroundColor = accentBlue + '99'; } else { bubble.style.backgroundColor = 'rgba(224, 224, 224, 0.6)'; }
+                    const startX = Math.random() * 50 + 25; const startY = Math.random() * 20 + 75; bubble.style.left = `${startX}%`; bubble.style.top = `${startY}%`;
+                    bubbleAnimationContainer.appendChild(bubble); animateBubble(bubble, startX, startY);
+                }
+            }
+            function animateBubble(bubble, startX, startY) {
+                const endY = startY - (Math.random() * 40 + 30); const midX = startX + (Math.random() * 10 - 5); const endX = startX + (Math.random() * 8 - 4);
+                const duration = Math.random() * 2 + 1.8; const delay = Math.random() * 0.4;
+                bubble.animate([ { transform: 'scale(0)', opacity: 0, offset: 0 }, { transform: 'scale(1)', opacity: 0.8, offset: 0.15 }, { transform: 'scale(1)', opacity: 0.6, offset: 0.8 }, { transform: 'scale(0.6)', opacity: 0, offset: 1 } ], { duration: duration * 1000, easing: 'cubic-bezier(0.33, 1, 0.68, 1)', fill: 'forwards', delay: delay * 1000 });
+                bubble.animate([ { top: `${startY}%`, left: `${startX}%` }, { top: `${(startY + endY)/2}%`, left: `${midX}%`}, { top: `${endY}%`, left: `${endX}%` } ], { duration: duration * 1000, easing: 'cubic-bezier(0.33, 1, 0.68, 1)', fill: 'forwards', delay: delay * 1000 });
+                Promise.allSettled(bubble.getAnimations().map(anim => anim.finished)).then(() => { if (bubble.parentNode) { bubble.parentNode.removeChild(bubble); } });
+            }
+            concernItems.forEach(item => {
+                const bubble = item.querySelector('.concern-bubble'); if (!bubble) return;
+                let canBubble = true; let enterTimeout;
+                 item.addEventListener('mouseenter', function() {
+                    const currentBubble = this.querySelector('.concern-bubble'); clearTimeout(enterTimeout);
+                    if (canBubble) { createMiniBubbles(currentBubble); canBubble = false; enterTimeout = setTimeout(() => { canBubble = true; }, 400); }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
